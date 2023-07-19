@@ -1,5 +1,5 @@
-CREATE SCHEMA dannys_diner;
-use  dannys_diner;
+CREATE DATABASE dannys_diner;
+USE  dannys_diner;
 
 
 CREATE TABLE sales (
