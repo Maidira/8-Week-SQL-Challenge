@@ -31,7 +31,7 @@ GROUP BY r.region_name;
 -- 3. How many customers are allocated to each region?
 
 SELECT
-	COUNT(c.customer_id) AS num_of_customers,
+	COUNT(DISTINCT c.customer_id) AS num_of_customers,
     r.region_name
 FROM customer_nodes c 
 JOIN regions r
