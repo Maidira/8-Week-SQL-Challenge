@@ -1,5 +1,5 @@
 ----------------------------------
--- CASE STUDY #1: Pizza Metrics --
+-- CASE STUDY #4: Data Bank --
 ----------------------------------
 
 -- Tool used: MySQL Workbench
