@@ -1,5 +1,5 @@
 ----------------------------------
--- CASE STUDY #1: Pizza Metrics --
+-- CASE STUDY #2: Pizza Metrics --
 ----------------------------------
 
 -- Tool used: MySQL Server
