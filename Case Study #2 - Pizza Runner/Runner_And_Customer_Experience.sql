@@ -1,5 +1,5 @@
 ----------------------------------
--- CASE STUDY #1: Runner and Customer Experience --
+-- CASE STUDY #2: Runner and Customer Experience --
 ----------------------------------
 
 -- Tool used: MySQL Server
