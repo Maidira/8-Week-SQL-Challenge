@@ -67,11 +67,57 @@ GROUP BY calendar_year
 ORDER BY calendar_year;
 
 
+-- 4. What is the total sales for each region for each month?
+
+SELECT month_number, region, 
+	SUM(sales) AS total_sales
+FROM clean_weekly_sales
+GROUP BY month_number, region
+ORDER BY month_number, region;
 
 
+-- 5. What is the total count of transactions for each platform?
+
+SELECT platform,
+		SUM(transactions) AS total_transaction
+FROM clean_weekly_sales
+GROUP BY platform
+ORDER BY total_transaction;
 
 
+-- 6. What is the percentage of sales for Retail vs Shopify for each month?
 
+WITH cte AS (
+    SELECT calendar_year, month_number, platform,
+        SUM(sales) AS monthly_sales
+    FROM
+        clean_weekly_sales
+    GROUP BY
+        calendar_year,
+        month_number,
+        platform
+)
+
+SELECT
+    calendar_year,
+    month_number,
+    ROUND(
+        100 * MAX(
+            CASE WHEN platform = 'Retail' THEN monthly_sales ELSE 0 END
+        ) / NULLIF(SUM(monthly_sales), 0), 2
+    ) AS retail_percentage,
+    ROUND(
+        100 * MAX(
+            CASE WHEN platform = 'Shopify' THEN monthly_sales ELSE 0 END
+        ) / NULLIF(SUM(monthly_sales), 0), 2
+    ) AS shopify_percentage
+FROM
+    cte
+GROUP BY calendar_year, month_number
+ORDER BY calendar_year, month_number;
+
+
+-- 7. What is the percentage of sales by demographic for each year in the dataset?
 
 
 
