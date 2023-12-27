@@ -11,7 +11,7 @@
 
 
 -----------------------------------
--- 1. Data Cleansing Steps --
+-- A. Data Cleansing Steps --
 -----------------------------------
 
 DROP TABLE IF EXISTS clean_weekly_sales;
@@ -42,7 +42,7 @@ FROM weekly_sales
 
 
 -----------------------------------
--- 2. Data Exploration --
+-- B. Data Exploration --
 -----------------------------------
 
 -- 1. What day of the week is used for each week_date value?
